@@ -68,7 +68,7 @@ class SkeletonGPT(nn.Module):
         self.config.word_embed_proj_dim = self.config.hidden_size # 1024
 
         self.transformer = AutoModelForCausalLM.from_config(
-            config=self.config, attn_implementation="eager")
+            config=self.config, attn_implementation="flash_attention_2")
 
         self.cond_head_proj = nn.Linear(self.cond_dim, self.config.word_embed_proj_dim)
         self.cond_proj = nn.Linear(self.cond_dim, self.config.word_embed_proj_dim)
