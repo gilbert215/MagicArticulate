@@ -72,7 +72,7 @@ if __name__ == "__main__":
     model = SkeletonGPT(args).cuda()
     
     if args.pretrained_weights is not None:
-        pkg = torch.load(args.pretrained_weights, map_location=torch.device("cpu"))
+        pkg = torch.load(args.pretrained_weights, map_location=torch.device("cpu"), weights_only=False)
         model.load_state_dict(pkg["model"])
     else:
         raise ValueError("Pretrained weights must be provided.")
