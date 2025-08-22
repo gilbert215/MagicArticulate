@@ -1,0 +1,16 @@
+# Large data and checkpoint files
+*.npz
+*.ckpt
+
+# Output and third-party directories
+/outputs/
+/skeleton_ckpt/
+/third_party/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# IDE settings
+.vscode/
+.idea/
